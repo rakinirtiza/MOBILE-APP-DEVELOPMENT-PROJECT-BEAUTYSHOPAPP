@@ -47,6 +47,15 @@
             android:padding="15dp"
             android:layout_marginBottom="15dp"/>
 
+        <EditText
+            android:id="@+id/confirmPasswordEt"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:layout_marginBottom="20dp"/>
+
         <Button
             android:id="@+id/registerBtn"
             android:layout_width="match_parent"

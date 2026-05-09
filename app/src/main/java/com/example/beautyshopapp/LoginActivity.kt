@@ -21,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
         val emailEt = findViewById<EditText>(R.id.emailEt)
         val passwordEt = findViewById<EditText>(R.id.passwordEt)
+
         val loginBtn = findViewById<Button>(R.id.loginBtn)
         val registerTv = findViewById<TextView>(R.id.registerTv)
         val forgotTv = findViewById<TextView>(R.id.forgotTv)
@@ -31,50 +32,68 @@ class LoginActivity : AppCompatActivity() {
             val password = passwordEt.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Enter all fields", Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(
+                    this,
+                    "Please fill all fields",
+                    Toast.LENGTH_SHORT
+                ).show()
+
             } else {
 
                 auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener {
+                    .addOnCompleteListener { task ->
 
-                        if (it.isSuccessful) {
+                        if (task.isSuccessful) {
 
-                            if (auth.currentUser!!.isEmailVerified) {
+                            val user = auth.currentUser
 
-                                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                            if (user != null && user.isEmailVerified) {
 
-                                startActivity(Intent(this, MainActivity::class.java))
+                                Toast.makeText(
+                                    this,
+                                    "Login Successful",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                                startActivity(
+                                    Intent(
+                                        this,
+                                        MainActivity::class.java
+                                    )
+                                )
+
                                 finish()
 
                             } else {
 
-                                Toast.makeText(this, "Verify your email first", Toast.LENGTH_LONG).show()
-
+                                Toast.makeText(
+                                    this,
+                                    "Verify your email first",
+                                    Toast.LENGTH_LONG
+                                ).show()
                             }
 
                         } else {
 
-                            Toast.makeText(this, it.exception!!.message, Toast.LENGTH_LONG).show()
-
+                            Toast.makeText(
+                                this,
+                                task.exception?.message,
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
-
                     }
-
             }
-
         }
 
         registerTv.setOnClickListener {
 
             startActivity(Intent(this, RegisterActivity::class.java))
-
         }
 
         forgotTv.setOnClickListener {
 
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
-
         }
-
     }
 }
