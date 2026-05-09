@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "882470608939",
-    "project_id": "beautyapp-d7201",
-    "storage_bucket": "beautyapp-d7201.firebasestorage.app"
+    "project_number": "452908681781",
+    "project_id": "beautyshopnew-f241d",
+    "storage_bucket": "beautyshopnew-f241d.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:882470608939:android:f4dfcb92fff981dbb30a6e",
+        "mobilesdk_app_id": "1:452908681781:android:039f5307c02ac630caff7c",
         "android_client_info": {
-          "package_name": "com.example.beautyapp"
+          "package_name": "com.example.beautyshopapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA7-ec29aXZ_UjA0z3juLmUnh6KOpgKGog"
+          "current_key": "AIzaSyDTjgri_YS2nxaW_5kvEppbkWv5TUFtu3Q"
         }
       ],
       "services": {
