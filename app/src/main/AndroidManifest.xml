@@ -5,8 +5,8 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/intro_pic"
-        android:roundIcon="@drawable/intro_pic"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:roundIcon="@drawable/ic_launcher_foreground"
         android:label="BeautyShopApp"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyShopApp">
