@@ -37,7 +37,7 @@ class SliderAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): SliderViewHolder {
+    ): SliderAdapter. SliderViewHolder {
 
         context = parent.context
 
