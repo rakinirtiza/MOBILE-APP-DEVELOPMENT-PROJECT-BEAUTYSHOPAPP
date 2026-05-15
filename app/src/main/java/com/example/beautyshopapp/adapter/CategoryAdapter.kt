@@ -43,7 +43,7 @@ class CategoryAdapter(val items: List<CategoryModel>) :
             holder.binding.titleTxt.setTextColor(
                 ContextCompat.getColor(
                     holder.itemView.context,
-                    R.color.darkGrey
+                    R.color.white
                 )
             )
 
