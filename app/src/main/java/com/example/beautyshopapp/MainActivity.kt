@@ -2,9 +2,11 @@ package com.example.beautyshopapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautyshopapp.adapter.CategoryAdapter
 import com.example.beautyshopapp.databinding.ActivityMainBinding
 import com.example.beautyshopapp.MainviewModel.MainViewModel
@@ -47,11 +49,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun initCategory() {
 
-        viewModel.loadCategory()
+        binding.progressBarCategory.visibility = View.VISIBLE
 
         viewModel.category.observe(this, Observer {
 
+            binding.progressBarCategory.visibility = View.GONE
+
             binding.rvCategory.adapter = CategoryAdapter(it)
+
+            binding.rvCategory.layoutManager =
+                LinearLayoutManager(
+                    this,
+                    LinearLayoutManager.HORIZONTAL,
+                    false
+                )
         })
+
+        viewModel.loadCategory()
     }
 }
