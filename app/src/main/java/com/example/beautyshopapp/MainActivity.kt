@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautyshopapp.adapter.CategoryAdapter
 import com.example.beautyshopapp.databinding.ActivityMainBinding
 import com.example.beautyshopapp.MainviewModel.MainViewModel
+import com.example.beautyshopapp.domain.SliderModel
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -66,5 +67,10 @@ class MainActivity : AppCompatActivity() {
         })
 
         viewModel.loadCategory()
+    }
+    private fun banners(image:List<SliderModel>){
+        binding.apply {
+
+        }
     }
 }

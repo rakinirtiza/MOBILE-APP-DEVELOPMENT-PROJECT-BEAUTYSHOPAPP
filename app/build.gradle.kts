@@ -52,6 +52,7 @@ dependencies {
 
     implementation("com.google.firebase:firebase-auth-ktx:23.1.0")
     implementation("com.google.firebase:firebase-database-ktx:21.0.0")
+    implementation(libs.androidx.viewpager2)
 
     testImplementation("junit:junit:4.13.2")
 
@@ -59,4 +60,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+    implementation("com.tbuonomo:dotsindicator:5.0")
 }
