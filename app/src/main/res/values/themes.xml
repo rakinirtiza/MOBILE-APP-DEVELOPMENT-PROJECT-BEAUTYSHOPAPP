@@ -7,7 +7,7 @@
     <style name="Theme.BeautyShopApp"
         parent="Base.Theme.BeautyShopApp" />
 
-    <style name="roundCornerImage">
+    <style name="roundedCornerImage">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
     </style>
