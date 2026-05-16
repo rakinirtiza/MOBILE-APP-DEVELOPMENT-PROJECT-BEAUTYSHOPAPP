@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.beautyshopapp.adapter.CategoryAdapter
 import com.example.beautyshopapp.databinding.ActivityMainBinding
 import com.example.beautyshopapp.MainviewModel.MainViewModel
+import com.example.beautyshopapp.adapter.PopularAdapter
 import com.example.beautyshopapp.adapter.SliderAdapter
 import com.example.beautyshopapp.domain.SliderModel
 import com.google.firebase.auth.FirebaseAuth
@@ -65,13 +66,13 @@ class MainActivity : AppCompatActivity() {
                     LinearLayoutManager.HORIZONTAL,
                     false
                 )
+                viewPopular.adapter = PopularAdapter(it)
 
                 progressBarPopular.visibility = View.GONE
             })
         }
 
         viewModel.loadPopular()
-
     }
 
     private fun initBanner() {
@@ -108,7 +109,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.loadCategory()
     }
-    private fun banners(image:List<SliderModel>){
+
+    private fun banners(image: List<SliderModel>) {
         binding.apply {
             viewPager2.adapter = SliderAdapter(
                 sliderItems = image,
@@ -139,4 +141,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-        }
+}
