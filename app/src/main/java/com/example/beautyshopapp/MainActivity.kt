@@ -50,6 +50,28 @@ class MainActivity : AppCompatActivity() {
 
         initCategory()
         initBanner()
+        initPopular()
+    }
+
+    private fun initPopular() {
+        binding.apply {
+
+            progressBarBanner.visibility = View.VISIBLE
+
+            viewModel.popular.observe(this@MainActivity, Observer {
+
+                viewPopular.layoutManager = LinearLayoutManager(
+                    this@MainActivity,
+                    LinearLayoutManager.HORIZONTAL,
+                    false
+                )
+
+                progressBarPopular.visibility = View.GONE
+            })
+        }
+
+        viewModel.loadPopular()
+
     }
 
     private fun initBanner() {

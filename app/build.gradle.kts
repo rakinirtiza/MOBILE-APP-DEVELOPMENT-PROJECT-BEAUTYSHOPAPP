@@ -53,6 +53,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx:23.1.0")
     implementation("com.google.firebase:firebase-database-ktx:21.0.0")
     implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.recyclerview)
 
     testImplementation("junit:junit:4.13.2")
 
