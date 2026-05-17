@@ -1,9 +1,12 @@
 package com.example.beautyshopapp.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.beautyshopapp.activity.DetailActivity
 import com.example.beautyshopapp.databinding.ViewholderPopularBinding
 import com.example.beautyshopapp.domain.ItemsModel
 
@@ -43,6 +46,14 @@ class PopularAdapter(val items: List<ItemsModel>) :
             Glide.with(holder.itemView.context)
                 .load(item.picUrl[0])
                 .into(pic)
+
+            root.setOnClickListener {
+                val intent= Intent(holder.itemView.context, DetailActivity::class.java)
+                    .apply {
+                        putExtra("object",item)
+                    }
+                ContextCompat.startActivity (holder.itemView.context,intent,null)
+            }
         }
     }
 
