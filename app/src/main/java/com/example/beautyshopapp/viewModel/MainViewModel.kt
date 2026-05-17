@@ -1,4 +1,4 @@
-package com.example.beautyshopapp.MainviewModel
+package com.example.beautyshopapp.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -86,6 +86,39 @@ class MainViewModel : ViewModel() {
         val ref = firebaseDatabase.getReference("Items")
 
         val query: Query = ref.orderByChild("showRecommended").equalTo(true)
+
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                val lists = mutableListOf<ItemsModel>()
+
+                for (childSnapshot in snapshot.children) {
+
+                    val list =
+                        childSnapshot.getValue(ItemsModel::class.java)
+
+                    if (list != null) {
+
+                        lists.add(list)
+                    }
+                }
+
+                _popular.value = lists
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
+    fun loadFiltered(id: String) {
+
+        val ref = firebaseDatabase.getReference("Items")
+
+        val query: Query = ref.orderByChild("categoryId").equalTo(id)
 
         query.addListenerForSingleValueEvent(object : ValueEventListener {
 

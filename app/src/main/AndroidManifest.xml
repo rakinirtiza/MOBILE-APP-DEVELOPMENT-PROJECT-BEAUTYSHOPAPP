@@ -6,31 +6,26 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/ic_launcher_foreground"
-        android:roundIcon="@drawable/ic_launcher_foreground"
         android:label="BeautyShopApp"
+        android:roundIcon="@drawable/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyShopApp">
-
+        <activity
+            android:name=".activity.ListItemsActivity"
+            android:exported="false" />
         <activity android:name=".MainActivity" />
-
         <activity android:name=".RegisterActivity" />
-
         <activity android:name=".ForgotPasswordActivity" />
-
         <activity android:name=".LoginActivity" />
-
         <activity
             android:name=".SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
     </application>
 
 </manifest>

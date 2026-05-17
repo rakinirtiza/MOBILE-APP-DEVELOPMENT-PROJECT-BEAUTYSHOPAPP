@@ -11,7 +11,7 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.beautyshopapp.adapter.CategoryAdapter
 import com.example.beautyshopapp.databinding.ActivityMainBinding
-import com.example.beautyshopapp.MainviewModel.MainViewModel
+import com.example.beautyshopapp.viewModel.MainViewModel
 import com.example.beautyshopapp.adapter.PopularAdapter
 import com.example.beautyshopapp.adapter.SliderAdapter
 import com.example.beautyshopapp.domain.SliderModel
