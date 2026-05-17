@@ -1,6 +1,7 @@
 package com.example.beautyshopapp.activity
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,6 +20,21 @@ class ListItemsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
        binding= ActivityListItemsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
+
+        getBundle()
+
+
+    }
+
+    private fun getBundle(){
+
+        id=intent.getStringExtra("id").toString()
+        title=intent.getStringExtra("title").toString()
 
     }
 }
