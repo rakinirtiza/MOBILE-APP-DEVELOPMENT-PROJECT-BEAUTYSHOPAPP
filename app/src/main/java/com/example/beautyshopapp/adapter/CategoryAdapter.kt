@@ -79,11 +79,11 @@ class CategoryAdapter(val items: List<CategoryModel>) :
 
             val intent = Intent(
                 holder.itemView.context,
-                ListItemsActivity::class.java
-            )
+                ListItemsActivity::class.java).apply{
+                putExtra("title", item.title)
+                putExtra("id", item.id)
 
-            intent.putExtra("title", item.title)
-            intent.putExtra("id", item.id)
+            }
 
             ContextCompat.startActivity(
                 holder.itemView.context,
