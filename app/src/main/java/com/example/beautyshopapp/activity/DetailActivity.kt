@@ -2,15 +2,10 @@ package com.example.beautyshopapp.activity
 
 import android.os.Bundle
 import android.view.WindowManager
-import android.widget.LinearLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.beautyshopapp.Helper.ManagmentCart
-import com.example.beautyshopapp.R
 import com.example.beautyshopapp.adapter.PicAdapter
 import com.example.beautyshopapp.databinding.ActivityDetailBinding
 import com.example.beautyshopapp.domain.ItemsModel

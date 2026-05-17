@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:background="@color/lightPink"
     android:layout_height="match_parent"
-    tools:context=".activity.CardActivity">
+    tools:context=".activity.CartActivity">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -48,7 +48,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/viewCard"
+                android:id="@+id/viewCart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp" />

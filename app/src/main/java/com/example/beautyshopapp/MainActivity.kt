@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
+import com.example.beautyshopapp.activity.CartActivity
 import com.example.beautyshopapp.adapter.CategoryAdapter
 import com.example.beautyshopapp.databinding.ActivityMainBinding
 import com.example.beautyshopapp.viewModel.MainViewModel
@@ -16,6 +17,7 @@ import com.example.beautyshopapp.adapter.PopularAdapter
 import com.example.beautyshopapp.adapter.SliderAdapter
 import com.example.beautyshopapp.domain.SliderModel
 import com.google.firebase.auth.FirebaseAuth
+import kotlin.jvm.java
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,6 +54,13 @@ class MainActivity : AppCompatActivity() {
         initCategory()
         initBanner()
         initPopular()
+        initBottomMenu()
+    }
+
+    private fun initBottomMenu() {
+        binding.bottomBtn3.setOnClickListener {
+            startActivity(Intent(this@MainActivity, CartActivity::class.java))
+        }
     }
 
     private fun initPopular() {
