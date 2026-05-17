@@ -1,12 +1,18 @@
 package com.example.beautyshopapp.adapter
 
+import android.content.Intent
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.os.postDelayed
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beautyshopapp.R
+import com.example.beautyshopapp.activity.ListItemsActivity
 import com.example.beautyshopapp.databinding.ViewholderCategoryBinding
 import com.example.beautyshopapp.domain.CategoryModel
+
+import android.os.Handler
 
 class CategoryAdapter(val items: List<CategoryModel>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
@@ -60,13 +66,34 @@ class CategoryAdapter(val items: List<CategoryModel>) :
         }
 
         holder.binding.root.setOnClickListener {
-
-            lastSelectedPosition = selectedPosition
-            selectedPosition = holder.adapterPosition
-
+            val position = position
+            if(position!= RecyclerView.NO_POSITION){
+                lastSelectedPosition=selectedPosition
+                selectedPosition=position
+            }
             notifyItemChanged(lastSelectedPosition)
             notifyItemChanged(selectedPosition)
         }
+
+        Handler(Looper.getMainLooper()).postDelayed({
+
+            val intent = Intent(
+                holder.itemView.context,
+                ListItemsActivity::class.java
+            )
+
+            intent.putExtra("title", item.title)
+            intent.putExtra("id", item.id)
+
+            ContextCompat.startActivity(
+                holder.itemView.context,
+                intent,
+                null
+            )
+
+        }, 1000)
+
+
     }
 
     override fun getItemCount(): Int = items.size
