@@ -28,7 +28,7 @@
                 android:layout_marginTop="48dp">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/backBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -38,7 +38,7 @@
                     app:srcCompat="@drawable/back" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/categoryTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="title"
@@ -47,7 +47,7 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintStart_toStartOf="@+id/backBtn"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 

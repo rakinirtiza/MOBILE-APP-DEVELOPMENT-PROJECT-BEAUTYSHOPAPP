@@ -36,5 +36,7 @@ class ListItemsActivity : AppCompatActivity() {
         id=intent.getStringExtra("id").toString()
         title=intent.getStringExtra("title").toString()
 
+        binding.categoryTxt.text = title
+
     }
 }
