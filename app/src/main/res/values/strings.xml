@@ -9,4 +9,5 @@
     <string name="home">Home</string>
     <string name="Favourite" />
     <string name="product_detail">Product Detail</string>
+    <string name="add_to_cart">Add to Cart</string>
 </resources>
