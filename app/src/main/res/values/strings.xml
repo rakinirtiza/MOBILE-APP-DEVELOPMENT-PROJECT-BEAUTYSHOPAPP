@@ -13,4 +13,6 @@
     <string name="my_cart">My Cart</string>
     <string name="your_cart_is_empty">Your Cart is Empty</string>
     <string name="check_out">Check Out</string>
+    <string name="fee_delivery">Fee Delivery</string>
+    <string name="total_tax">Total Tax</string>
 </resources>
