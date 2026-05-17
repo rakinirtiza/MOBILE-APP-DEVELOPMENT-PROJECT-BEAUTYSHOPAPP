@@ -2,10 +2,12 @@ package com.example.beautyshopapp.activity
 
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.beautyshopapp.Helper.ManagmentCart
 import com.example.beautyshopapp.R
@@ -47,12 +49,15 @@ class DetailActivity : AppCompatActivity() {
             .load(picList[0])
             .into(binding.pic)
 
-        binding.picList.adapter = PicAdapter(items = picList) {
+        binding.picList.adapter = PicAdapter( picList) {
 
             Glide.with(this)
                 .load(it)
                 .into(binding.pic)
         }
+
+        binding.picList.layoutManager=
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
     }
 
     private fun getBundgle() {
