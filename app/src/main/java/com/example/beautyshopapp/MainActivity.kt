@@ -19,6 +19,11 @@ import com.example.beautyshopapp.domain.SliderModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlin.jvm.java
 
+import android.widget.ImageView
+import android.widget.PopupMenu
+import androidx.appcompat.app.AlertDialog
+
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -49,6 +54,35 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
+
+        // SETTINGS LOGOUT DIALOG
+
+        val settingsBtn = findViewById<ImageView>(R.id.settingsBtn)
+
+        settingsBtn.setOnClickListener {
+
+            AlertDialog.Builder(this)
+                .setIcon(R.drawable.logout)
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+
+                .setPositiveButton("Logout") { _, _ ->
+
+                    FirebaseAuth.getInstance().signOut()
+
+                    val intent = Intent(this, LoginActivity::class.java)
+
+                    startActivity(intent)
+
+                    finish()
+                }
+
+                .setNegativeButton("Cancel", null)
+
+                .show()
+        }
+
+
 
 
         initCategory()

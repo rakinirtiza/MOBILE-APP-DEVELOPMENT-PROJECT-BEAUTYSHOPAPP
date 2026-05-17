@@ -86,10 +86,11 @@
                     android:textSize="16sp" />
 
                 <ImageView
+                    android:id="@+id/settingsBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="8dp"
                     app:srcCompat="@drawable/settings_icon" />
-
             </LinearLayout>
 
             <!-- CATEGORY TITLE -->
