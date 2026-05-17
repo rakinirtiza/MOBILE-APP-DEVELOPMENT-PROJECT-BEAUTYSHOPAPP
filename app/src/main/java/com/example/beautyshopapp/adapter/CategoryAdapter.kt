@@ -67,31 +67,28 @@ class CategoryAdapter(val items: List<CategoryModel>) :
 
         holder.binding.root.setOnClickListener {
             val position = position
-            if(position!= RecyclerView.NO_POSITION){
-                lastSelectedPosition=selectedPosition
-                selectedPosition=position
+            if (position != RecyclerView.NO_POSITION) {
+                lastSelectedPosition = selectedPosition
+                selectedPosition = position
             }
             notifyItemChanged(lastSelectedPosition)
             notifyItemChanged(selectedPosition)
-        }
 
-        Handler(Looper.getMainLooper()).postDelayed({
 
             val intent = Intent(
                 holder.itemView.context,
                 ListItemsActivity::class.java).apply{
                 putExtra("title", item.title)
-                putExtra("id", item.id)
+                putExtra("id", item.id.toString())
 
             }
-
             ContextCompat.startActivity(
                 holder.itemView.context,
                 intent,
                 null
             )
 
-        }, 1000)
+        }
 
 
     }

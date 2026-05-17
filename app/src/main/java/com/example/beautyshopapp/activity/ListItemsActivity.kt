@@ -49,6 +49,7 @@ class ListItemsActivity : AppCompatActivity() {
                 viewList.layoutManager = GridLayoutManager(this@ListItemsActivity, 2)
 
                 viewList.adapter = PopularAdapter(it)
+                progressBarList.visibility = View.GONE
 
             })
 
