@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyShopApp">
         <activity
+            android:name=".activity.AdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
