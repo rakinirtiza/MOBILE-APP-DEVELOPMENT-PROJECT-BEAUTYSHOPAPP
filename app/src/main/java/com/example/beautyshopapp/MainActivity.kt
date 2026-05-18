@@ -134,6 +134,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomMenu() {
+
+        binding.bottomBtn4.setOnClickListener {
+
+            startActivity(
+                Intent(this@MainActivity, ProfileActivity::class.java)
+            )
+        }
         binding.bottomBtn3.setOnClickListener {
             startActivity(Intent(this@MainActivity, CartActivity::class.java))
         }
