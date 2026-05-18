@@ -79,6 +79,66 @@
             android:backgroundTint="#7B2CBF"
             android:layout_marginTop="20dp"/>
 
+        <EditText
+            android:id="@+id/quantityEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="New Quantity"
+            android:inputType="number"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/updateQuantityBtn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Update Quantity"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#5A189A"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:id="@+id/addProductIdEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="New Product ID"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/addProductTitleEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Title"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:id="@+id/addProductPriceEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Price"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/addProductBtn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Add Product"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#7B2CBF"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/deleteProductBtn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Delete Product"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D00000"
+            android:layout_marginTop="12dp"/>
+
     </LinearLayout>
 
 </ScrollView>

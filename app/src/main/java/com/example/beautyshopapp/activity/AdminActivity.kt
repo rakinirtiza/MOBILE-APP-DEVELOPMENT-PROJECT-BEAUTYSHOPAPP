@@ -67,5 +67,104 @@ class AdminActivity : AppCompatActivity() {
                     ).show()
                 }
         }
+
+        val quantityEdt =
+            findViewById<EditText>(R.id.quantityEdt)
+
+        val updateQuantityBtn =
+            findViewById<Button>(R.id.updateQuantityBtn)
+
+        val addProductIdEdt =
+            findViewById<EditText>(R.id.addProductIdEdt)
+
+        val addProductTitleEdt =
+            findViewById<EditText>(R.id.addProductTitleEdt)
+
+        val addProductPriceEdt =
+            findViewById<EditText>(R.id.addProductPriceEdt)
+
+        val addProductBtn =
+            findViewById<Button>(R.id.addProductBtn)
+
+        val deleteProductBtn =
+            findViewById<Button>(R.id.deleteProductBtn)
+
+
+        updateQuantityBtn.setOnClickListener {
+
+            val productId =
+                productIdEdt.text.toString().trim()
+
+            val quantity =
+                quantityEdt.text.toString().trim()
+
+            FirebaseDatabase.getInstance()
+                .getReference("Items")
+                .child(productId)
+                .child("quantity")
+                .setValue(quantity.toInt())
+
+                .addOnSuccessListener {
+
+                    Toast.makeText(
+                        this,
+                        "Quantity Updated",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+        }
+
+
+        addProductBtn.setOnClickListener {
+
+            val id =
+                addProductIdEdt.text.toString()
+
+            val title =
+                addProductTitleEdt.text.toString()
+
+            val price =
+                addProductPriceEdt.text.toString()
+
+            val map = HashMap<String, Any>()
+
+            map["title"] = title
+            map["price"] = price.toInt()
+
+            FirebaseDatabase.getInstance()
+                .getReference("Items")
+                .child(id)
+                .updateChildren(map)
+
+                .addOnSuccessListener {
+
+                    Toast.makeText(
+                        this,
+                        "Product Added",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+        }
+
+
+        deleteProductBtn.setOnClickListener {
+
+            val productId =
+                productIdEdt.text.toString()
+
+            FirebaseDatabase.getInstance()
+                .getReference("Items")
+                .child(productId)
+                .removeValue()
+
+                .addOnSuccessListener {
+
+                    Toast.makeText(
+                        this,
+                        "Product Deleted",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+        }
     }
 }
