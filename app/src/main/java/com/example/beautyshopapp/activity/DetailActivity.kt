@@ -11,6 +11,7 @@ import com.example.beautyshopapp.databinding.ActivityDetailBinding
 import com.example.beautyshopapp.domain.ItemsModel
 import android.content.Intent
 import android.content.SharedPreferences
+import android.widget.Toast
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -101,6 +102,23 @@ class DetailActivity : AppCompatActivity() {
                         "Share Product"
                     )
                 )
+            }
+            favBtn.setOnClickListener {
+
+                val editor = sharedPreferences.edit()
+
+                editor.putString(
+                    item.title,
+                    item.title + " - $" + item.price
+                )
+
+                editor.apply()
+
+                Toast.makeText(
+                    this@DetailActivity,
+                    "Added to favourites",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             plusBtn.setOnClickListener {
