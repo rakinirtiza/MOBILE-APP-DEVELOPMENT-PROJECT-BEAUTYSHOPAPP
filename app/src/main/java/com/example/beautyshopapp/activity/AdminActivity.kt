@@ -1,7 +1,8 @@
-package com.example.beautyshopapp
+package com.example.beautyshopapp.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.beautyshopapp.R
 
 class AdminActivity : AppCompatActivity() {
 

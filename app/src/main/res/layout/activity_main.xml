@@ -67,7 +67,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="12dp"
-                    app:srcCompat="@drawable/settings_icon"/>
+                    app:srcCompat="@drawable/admin_icon"/>
 
             </LinearLayout>
 

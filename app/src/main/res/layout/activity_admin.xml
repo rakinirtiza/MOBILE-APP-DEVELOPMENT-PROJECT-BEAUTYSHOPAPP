@@ -1,49 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FDF6FD">
+    android:background="#FDF6FD"
+    android:padding="20dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Admin Dashboard"
-        android:textSize="28sp"
-        android:textStyle="bold"
         android:textColor="#7B2CBF"
+        android:textStyle="bold"
+        android:textSize="28sp"
         android:layout_marginBottom="24dp"/>
 
-    <TextView
+    <Button
+        android:id="@+id/manageProductBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="• Manage Products"
-        android:textSize="20sp"
-        android:padding="12dp"/>
+        android:layout_height="55dp"
+        android:text="Manage Products"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#9D4EDD"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/updatePriceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Update Prices"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#C77DFF"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/manageQuantityBtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Manage Quantity"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#7B2CBF"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/firebaseBtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Firebase Connected"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#5A189A"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="• Manage Prices"
-        android:textSize="20sp"
-        android:padding="12dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="• Manage Quantity"
-        android:textSize="20sp"
-        android:padding="12dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="• Firebase Realtime Database Connected"
-        android:textSize="20sp"
-        android:textColor="#4CAF50"
-        android:padding="12dp"/>
+        android:text="Beauty Shop Admin Panel"
+        android:textColor="#7B2CBF"
+        android:textSize="16sp"
+        android:layout_marginTop="30dp"/>
 
 </LinearLayout>

@@ -26,6 +26,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import com.example.beautyshopapp.FavouriteActivity
+import com.example.beautyshopapp.activity.AdminActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -95,6 +96,28 @@ class MainActivity : AppCompatActivity() {
         initBanner()
         initPopular()
         initBottomMenu()
+
+        binding.adminBtn.setOnClickListener {
+
+            val currentUser = FirebaseAuth
+                .getInstance()
+                .currentUser
+
+            if (currentUser?.email == "abonti72542@gmail.com") {
+
+                startActivity(
+                    Intent(this, AdminActivity::class.java)
+                )
+
+            } else {
+
+                Toast.makeText(
+                    this,
+                    "Access Denied",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
 
         binding.bellBtn.setOnClickListener {
 
