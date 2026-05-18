@@ -24,6 +24,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -93,6 +94,15 @@ class MainActivity : AppCompatActivity() {
         initBanner()
         initPopular()
         initBottomMenu()
+
+        binding.bellBtn.setOnClickListener {
+
+            Toast.makeText(
+                this,
+                "No notifications yet",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
 
 
         binding.searchEdt.addTextChangedListener(object : TextWatcher {
