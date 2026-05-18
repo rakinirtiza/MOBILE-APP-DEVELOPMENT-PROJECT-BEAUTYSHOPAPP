@@ -62,6 +62,13 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/bell_icon" />
 
+                <ImageView
+                    android:id="@+id/adminBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="12dp"
+                    app:srcCompat="@drawable/settings_icon"/>
+
             </LinearLayout>
 
 
