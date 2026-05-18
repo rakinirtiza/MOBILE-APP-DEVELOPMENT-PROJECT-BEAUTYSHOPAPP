@@ -9,6 +9,7 @@ import com.example.beautyshopapp.Helper.ManagmentCart
 import com.example.beautyshopapp.adapter.PicAdapter
 import com.example.beautyshopapp.databinding.ActivityDetailBinding
 import com.example.beautyshopapp.domain.ItemsModel
+import android.content.Intent
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -75,6 +76,27 @@ class DetailActivity : AppCompatActivity() {
             }
 
             backBtn.setOnClickListener { finish() }
+
+            shareBtn.setOnClickListener {
+
+                val shareIntent = Intent(Intent.ACTION_SEND)
+
+                shareIntent.type = "text/plain"
+
+                val shareMessage =
+                    "Check out this product:\n\n" +
+                            "Product: ${item.title}\n" +
+                            "Price: $${item.price}"
+
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
+
+                startActivity(
+                    Intent.createChooser(
+                        shareIntent,
+                        "Share Product"
+                    )
+                )
+            }
 
             plusBtn.setOnClickListener {
 

@@ -20,8 +20,10 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlin.jvm.java
 
 import android.widget.ImageView
-import android.widget.PopupMenu
+
 import androidx.appcompat.app.AlertDialog
+import android.text.Editable
+import android.text.TextWatcher
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,12 +31,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
 
+    private lateinit var popularAdapter: PopularAdapter
+
     private val viewModel = MainViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Firebase Auth
+
         auth = FirebaseAuth.getInstance()
 
 
@@ -45,17 +49,17 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        // View Binding
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Full screen
+
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
-        // SETTINGS LOGOUT DIALOG
+
 
         val settingsBtn = findViewById<ImageView>(R.id.settingsBtn)
 
@@ -89,6 +93,33 @@ class MainActivity : AppCompatActivity() {
         initBanner()
         initPopular()
         initBottomMenu()
+
+
+        binding.searchEdt.addTextChangedListener(object : TextWatcher {
+
+            override fun beforeTextChanged(
+                s: CharSequence?,
+                start: Int,
+                count: Int,
+                after: Int
+            ) {
+
+            }
+
+            override fun onTextChanged(
+                s: CharSequence?,
+                start: Int,
+                before: Int,
+                count: Int
+            ) {
+
+                filterProducts(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
     }
 
     private fun initBottomMenu() {
@@ -109,7 +140,9 @@ class MainActivity : AppCompatActivity() {
                     LinearLayoutManager.HORIZONTAL,
                     false
                 )
-                viewPopular.adapter = PopularAdapter(it)
+                popularAdapter = PopularAdapter(it)
+
+                viewPopular.adapter = popularAdapter
 
                 progressBarPopular.visibility = View.GONE
             })
@@ -184,4 +217,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-}
+        private fun filterProducts(query: String) {
+
+            val filteredList = viewModel.popular.value?.filter {
+
+                it.title.lowercase().contains(query.lowercase())
+            }
+
+            if (filteredList != null) {
+
+                val adapter = PopularAdapter(ArrayList(filteredList))
+
+                binding.viewPopular.adapter = adapter
+            }
+        }
+
+    }
+
+
+
