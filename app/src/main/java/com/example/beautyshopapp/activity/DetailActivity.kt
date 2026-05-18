@@ -10,11 +10,13 @@ import com.example.beautyshopapp.adapter.PicAdapter
 import com.example.beautyshopapp.databinding.ActivityDetailBinding
 import com.example.beautyshopapp.domain.ItemsModel
 import android.content.Intent
+import android.content.SharedPreferences
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var item: ItemsModel
     private lateinit var managmentCart: ManagmentCart
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,9 @@ class DetailActivity : AppCompatActivity() {
         )
 
         managmentCart = ManagmentCart(this)
+
+        sharedPreferences =
+            getSharedPreferences("FAVOURITE", MODE_PRIVATE)
 
         getBundgle()
         initList()
