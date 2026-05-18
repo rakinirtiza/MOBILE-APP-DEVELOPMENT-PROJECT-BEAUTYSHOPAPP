@@ -25,6 +25,7 @@ import androidx.appcompat.app.AlertDialog
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
+import com.example.beautyshopapp.FavouriteActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -135,6 +136,15 @@ class MainActivity : AppCompatActivity() {
     private fun initBottomMenu() {
         binding.bottomBtn3.setOnClickListener {
             startActivity(Intent(this@MainActivity, CartActivity::class.java))
+        }
+        binding.bottomBtn2.setOnClickListener {
+
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    FavouriteActivity::class.java
+                )
+            )
         }
     }
 

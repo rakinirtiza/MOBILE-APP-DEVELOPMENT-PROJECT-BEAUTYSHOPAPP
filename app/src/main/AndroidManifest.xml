@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyShopApp">
         <activity
+            android:name=".FavouriteActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.CartActivity"
             android:exported="false" />
         <activity
