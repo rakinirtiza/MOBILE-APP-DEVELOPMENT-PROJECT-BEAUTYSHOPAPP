@@ -12,7 +12,8 @@ import com.example.beautyshopapp.Helper.ManagmentCart
 import com.example.beautyshopapp.R
 import com.example.beautyshopapp.adapter.CartAdapter
 import com.example.beautyshopapp.databinding.ActivityCartBinding
-
+import android.content.Intent
+import com.example.beautyshopapp.CheckoutActivity
 class CartActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCartBinding
@@ -59,7 +60,26 @@ class CartActivity : AppCompatActivity() {
         }
     }
     private fun setVariable() {
-        binding.backBtn.setOnClickListener { finish() }
+
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
+
+        binding.checkoutBtn.setOnClickListener {
+
+            val total =
+                managmentCart.getTotalFee() + tax + 10.0
+
+            val intent =
+                Intent(this, CheckoutActivity::class.java)
+
+            intent.putExtra(
+                "totalPrice",
+                total
+            )
+
+            startActivity(intent)
+        }
     }
 
     private fun calculatorCart() {
